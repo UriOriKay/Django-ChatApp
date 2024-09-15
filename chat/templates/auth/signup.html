@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Sign up</h1>
+
+<!-- {% if message in state.keys %} -->
+<!-- {% endif %} -->
+<ul>
+    <li>{{message}}</li>
+</ul>
+
+<form action="/signup/" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="redirect" value="{{redirect}}">
+    <div><span>Username</span><input name="username" type="text"></div>
+    <div><span>Email</span><input name="email" type="email"></div>
+    <div><span>Password</span><input name="password" type="password"></div>
+    <div><span>Repeat Password</span><input name="password2" type="password"></div>
+    <div><button>Register</button></div>
+</form>
+
+{% endblock %}
